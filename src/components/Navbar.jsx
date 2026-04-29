@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import TextLogo from './TextLogo';
 import logo from '../../Assets/Invixa Logo.png';
 
 const Navbar = () => {
@@ -17,26 +16,21 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`${scrolled ? 'glass-morphism shadow-soft' : ''}`}>
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', padding: '0 16px' }}>
+    <nav className={`${scrolled || isOpen ? 'glass-morphism shadow-soft' : ''}`}>
+      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Link to="/" onClick={() => setIsOpen(false)} style={{ display: 'flex', alignItems: 'center', zIndex: 1100 }}>
           <img 
             src={logo} 
             alt="Invixa" 
             className="nav-logo"
             style={{ 
-              height: '84px', 
+              height: '60px', 
               width: 'auto', 
-              objectFit: 'contain'
+              objectFit: 'contain',
+              transition: 'var(--transition-smooth)'
             }} 
           />
         </Link>
-
-        <style dangerouslySetInnerHTML={{ __html: `
-          @media (max-width: 768px) {
-            .nav-logo { height: 68px !important; }
-          }
-        `}} />
 
         {/* Desktop Nav */}
         <ul style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-nav">
@@ -49,27 +43,51 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="mobile-toggle" style={{ display: 'none' }}>
-          {isOpen ? <X /> : <Menu />}
+        <button 
+          onClick={() => setIsOpen(!isOpen)} 
+          className="mobile-toggle" 
+          style={{ 
+            display: 'none', 
+            zIndex: 1100,
+            padding: '8px',
+            marginRight: '-8px'
+          }}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="mobile-menu glass-morphism" style={{ position: 'absolute', top: '96px', left: 0, right: 0, padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/services" onClick={() => setIsOpen(false)}>Services</Link>
-          <Link to="/pricing" onClick={() => setIsOpen(false)}>Pricing</Link>
-          <Link to="/portfolio" onClick={() => setIsOpen(false)}>Portfolio</Link>
-          <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
-          <Link to="/contact" className="btn-primary" onClick={() => setIsOpen(false)}>Contact</Link>
-        </div>
-      )}
+      <div 
+        className={`mobile-menu glass-morphism ${isOpen ? 'open' : ''}`}
+        style={{ 
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          height: '100vh',
+          padding: '100px 2rem 2rem 2rem', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          gap: '2rem',
+          transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          zIndex: 1050
+        }}
+      >
+        <Link to="/" onClick={() => setIsOpen(false)} style={{ fontSize: '1.5rem', fontWeight: 500 }}>Home</Link>
+        <Link to="/services" onClick={() => setIsOpen(false)} style={{ fontSize: '1.5rem', fontWeight: 500 }}>Services</Link>
+        <Link to="/pricing" onClick={() => setIsOpen(false)} style={{ fontSize: '1.5rem', fontWeight: 500 }}>Pricing</Link>
+        <Link to="/portfolio" onClick={() => setIsOpen(false)} style={{ fontSize: '1.5rem', fontWeight: 500 }}>Portfolio</Link>
+        <Link to="/about" onClick={() => setIsOpen(false)} style={{ fontSize: '1.5rem', fontWeight: 500 }}>About</Link>
+        <Link to="/contact" className="btn-primary" onClick={() => setIsOpen(false)} style={{ fontSize: '1.25rem', padding: '16px' }}>Contact Us</Link>
+      </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: block !important; }
+          .nav-logo { height: 50px !important; }
         }
       `}} />
     </nav>

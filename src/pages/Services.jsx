@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Search, Smartphone, ArrowRight, Check } from 'lucide-react';
+import { Monitor, Search, Smartphone, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import serviceWebDev from '../assets/service_web_dev.png';
 import serviceSeo from '../assets/service_seo.png';
@@ -9,12 +9,18 @@ import serviceAppDev from '../assets/service_app_dev.png';
 const ServiceSection = ({ icon: Icon, title, description, benefits, whoItsFor, reverse, image }) => (
   <section className="section-padding">
     <div className="container">
-      <div style={{ display: 'flex', flexDirection: reverse ? 'row-reverse' : 'row', alignItems: 'center', gap: '4rem', flexWrap: 'wrap' }}>
-        <div style={{ flex: '1', minWidth: '300px' }}>
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: reverse ? 'row-reverse' : 'row', 
+        alignItems: 'center', 
+        gap: 'clamp(2rem, 5vw, 4rem)', 
+        flexWrap: 'wrap' 
+      }}>
+        <div style={{ flex: '1', minWidth: 'min(100%, 400px)' }}>
           <div className="text-gradient" style={{ marginBottom: '1.5rem' }}>
             <Icon size={48} />
           </div>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>{title}</h2>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1.5rem' }}>{title}</h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>{description}</p>
           
           <div style={{ marginBottom: '2rem' }}>
@@ -34,8 +40,8 @@ const ServiceSection = ({ icon: Icon, title, description, benefits, whoItsFor, r
 
           <Link to="/contact" className="btn-primary">Get Started</Link>
         </div>
-        <div style={{ flex: '1', minWidth: '300px' }}>
-          <div className="glass-morphism" style={{ borderRadius: '40px', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-secondary)', overflow: 'hidden' }}>
+        <div style={{ flex: '1', minWidth: 'min(100%, 400px)' }}>
+          <div className="glass-morphism" style={{ borderRadius: '40px', height: 'clamp(300px, 50vh, 400px)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-secondary)', overflow: 'hidden' }}>
              <img src={image} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </div>
@@ -47,9 +53,9 @@ const ServiceSection = ({ icon: Icon, title, description, benefits, whoItsFor, r
 const Services = () => {
   return (
     <div className="services-page">
-      <section className="page-top" style={{ textAlign: 'center', background: 'var(--bg-secondary)', paddingBottom: '40px' }}>
+      <section className="page-top" style={{ textAlign: 'center', background: 'var(--bg-secondary)', paddingBottom: '60px' }}>
         <div className="container">
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Our <span className="text-gradient">Expertise</span></h1>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 7vw, 3.5rem)', marginBottom: '1.5rem' }}>Our <span className="text-gradient">Expertise</span></h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto' }}>
             We combine design, technology, and strategy to build digital systems that deliver real business results.
           </p>
@@ -102,7 +108,7 @@ const Services = () => {
       {/* CTA */}
       <section className="section-padding" style={{ textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Ready to transform your business?</h2>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '2rem' }}>Ready to transform your business?</h2>
           <Link to="/contact" className="btn-primary" style={{ padding: '16px 40px' }}>Book Your Free Consultation</Link>
         </div>
       </section>

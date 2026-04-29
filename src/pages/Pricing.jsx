@@ -8,7 +8,7 @@ const PricingCard = ({ plan, popular }) => (
     whileHover={{ y: -5 }}
     className={`glass-morphism ${popular ? 'popular-card' : ''}`}
     style={{ 
-      padding: '3rem 2rem', 
+      padding: 'clamp(2rem, 5vw, 3rem) 2rem', 
       borderRadius: '32px', 
       display: 'flex', 
       flexDirection: 'column', 
@@ -29,7 +29,8 @@ const PricingCard = ({ plan, popular }) => (
         padding: '4px 16px', 
         borderRadius: '20px', 
         fontSize: '0.8rem', 
-        fontWeight: 600 
+        fontWeight: 600,
+        whiteSpace: 'nowrap'
       }}>
         Most Popular
       </span>
@@ -145,14 +146,14 @@ const Pricing = () => {
 
   return (
     <div className="pricing-page">
-      <section className="page-top" style={{ paddingBottom: '40px' }}>
+      <section className="page-top" style={{ paddingBottom: '60px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Flexible Plans for <span className="text-gradient">Every Stage</span></h1>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 7vw, 3.5rem)', marginBottom: '1.5rem' }}>Flexible Plans for <span className="text-gradient">Every Stage</span></h1>
             <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Start small. Scale fast. Upgrade anytime.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+          <div className="responsive-grid" style={{ marginBottom: '4rem' }}>
             {mainPlans.map((plan, i) => (
               <PricingCard key={i} plan={plan} popular={plan.popular} />
             ))}
@@ -176,7 +177,7 @@ const Pricing = () => {
                 exit={{ opacity: 0, height: 0 }}
                 style={{ overflow: 'hidden' }}
               >
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
+                <div className="responsive-grid" style={{ marginTop: '3rem' }}>
                   {advancedPlans.map((plan, i) => (
                     <PricingCard key={i} plan={plan} />
                   ))}

@@ -3,7 +3,7 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+import FloatingActions from './components/FloatingActions';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Pricing from './pages/Pricing';
@@ -37,7 +37,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        <WhatsAppButton />
+        <FloatingActions />
       </div>
     </Router>
   );

@@ -1,20 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoFull from '../../Assets/Invixa Tech Logo.png';
+import footerVibe from '../assets/footer_vibe.png';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)', padding: '60px 0 30px 0' }}>
+    <footer style={{ 
+      position: 'relative',
+      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url(${footerVibe})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      borderTop: '1px solid var(--glass-border)', 
+      padding: '60px 0 30px 0' 
+    }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
+        <div className="responsive-grid" style={{ marginBottom: '3rem', gap: '3rem' }}>
           <div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginBottom: '1.5rem', gap: '8px' }}>
-              <img src={logoFull} alt="Invixa Tech" style={{ height: '84px', width: 'auto', objectFit: 'contain' }} />
+              <img src={logoFull} alt="Invixa Tech" style={{ height: '60px', width: 'auto', objectFit: 'contain' }} />
               <div className="tagline" style={{ 
                 fontFamily: "'Inter', sans-serif", 
                 fontWeight: 500, 
                 letterSpacing: '0.25em', 
-                fontSize: '13px',
+                fontSize: '11px',
                 display: 'flex',
                 gap: '4px',
                 textTransform: 'uppercase'
@@ -55,9 +63,9 @@ const Footer = () => {
           <div>
             <h4 style={{ marginBottom: '1.5rem' }}>Contact</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-              <li>Email: info@invixa.com</li>
-              <li>Email: ajaykumarchoudharyakc@gmail.com</li>
-              <li>Phone: +91 83028 65020</li>
+              <li style={{ wordBreak: 'break-all' }}>info@invixa.com</li>
+              <li style={{ wordBreak: 'break-all' }}>ajaykumarchoudharyakc@gmail.com</li>
+              <li>+91 83028 65020</li>
               <li>India</li>
             </ul>
           </div>
@@ -72,12 +80,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @media (max-width: 768px) {
-          .tagline { font-size: 11px !important; }
-        }
-      `}} />
     </footer>
   );
 };
