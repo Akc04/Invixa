@@ -20,7 +20,7 @@ const About = () => {
               </p>
             </div>
             <div className="glass-morphism" style={{ borderRadius: '48px', height: '500px', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-              <img src="/about_vision.png" alt="Vision" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={`${import.meta.env.BASE_URL}about_vision.png`} alt="Vision" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ const About = () => {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '5rem', alignItems: 'center' }}>
             <div className="glass-morphism" style={{ borderRadius: '32px', height: '450px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
-              <img src="/about_founder.png" alt="Visionary Leader" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+              <img src={`${import.meta.env.BASE_URL}about_founder.png`} alt="Visionary Leader" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
             </div>
             <div>
               <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#fff' }}>The Vision Behind Invixa</h2>

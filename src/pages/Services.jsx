@@ -64,7 +64,7 @@ const Services = () => {
           "SEO-ready architecture"
         ]}
         whoItsFor="Doctors, clinics, and modern businesses looking for a premium online presence."
-        image="/service_web_dev.png"
+        image={`${import.meta.env.BASE_URL}service_web_dev.png`}
       />
 
       <ServiceSection 
@@ -79,7 +79,7 @@ const Services = () => {
         ]}
         whoItsFor="Businesses wanting to reduce ad spend and grow organic customer acquisition."
         reverse={true}
-        image="/service_seo.png"
+        image={`${import.meta.env.BASE_URL}service_seo.png`}
       />
 
       <ServiceSection 
@@ -93,7 +93,7 @@ const Services = () => {
           "Cross-platform compatibility"
         ]}
         whoItsFor="Companies looking for bespoke tools to manage their growth and operations."
-        image="/service_app_dev.png"
+        image={`${import.meta.env.BASE_URL}service_app_dev.png`}
       />
 
       {/* CTA */}

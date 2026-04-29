@@ -22,7 +22,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="section-padding page-top" style={{ 
         textAlign: 'center', 
-        background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('/hero_main.png')`,
+        background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('${import.meta.env.BASE_URL}hero_main.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
