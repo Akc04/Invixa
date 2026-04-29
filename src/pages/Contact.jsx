@@ -83,7 +83,7 @@ const Contact = () => {
                 <div style={{ marginTop: '2rem', paddingLeft: '1rem' }}>
                   <h4 style={{ marginBottom: '1rem' }}>Direct Email</h4>
                   <a href="mailto:info@invixa.com" style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', flexWrap: 'wrap', textDecoration: 'none' }} className="hover-link">
-                    <Mail size={20} color="var(--accent-blue)" /> <span style={{ wordBreak: 'break-all' }}>info@invixa.com</span>
+                    <Mail size={22} color="var(--accent-blue)" /> <span style={{ wordBreak: 'break-all' }}>info@invixa.com</span>
                   </a>
                   <a href="mailto:ajaykumarchoudharyakc@gmail.com" style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', flexWrap: 'wrap', textDecoration: 'none' }} className="hover-link">
                     <GmailIcon size={20} /> <span style={{ wordBreak: 'break-all' }}>ajaykumarchoudharyakc@gmail.com</span>
