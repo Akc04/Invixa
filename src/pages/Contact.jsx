@@ -83,10 +83,10 @@ const Contact = () => {
                 <div style={{ marginTop: '2rem', paddingLeft: '1rem' }}>
                   <h4 style={{ marginBottom: '1rem' }}>Direct Email</h4>
                   <p style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', flexWrap: 'wrap' }}>
-                    <Mail size={18} color="var(--accent-blue)" /> <span style={{ wordBreak: 'break-all' }}>info@invixa.com</span>
+                    <Mail size={20} color="var(--accent-blue)" /> <span style={{ wordBreak: 'break-all' }}>info@invixa.com</span>
                   </p>
                   <p style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', flexWrap: 'wrap' }}>
-                    <GmailIcon /> <span style={{ wordBreak: 'break-all' }}>ajaykumarchoudharyakc@gmail.com</span>
+                    <GmailIcon size={20} /> <span style={{ wordBreak: 'break-all' }}>ajaykumarchoudharyakc@gmail.com</span>
                   </p>
                   <p style={{ color: 'var(--text-secondary)' }}>
                     India
