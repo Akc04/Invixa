@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Monitor, Search, Smartphone, ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import serviceWebDev from '../assets/service_web_dev.png';
+import serviceSeo from '../assets/service_seo.png';
+import serviceAppDev from '../assets/service_app_dev.png';
 
 const ServiceSection = ({ icon: Icon, title, description, benefits, whoItsFor, reverse, image }) => (
   <section className="section-padding">
@@ -64,7 +67,7 @@ const Services = () => {
           "SEO-ready architecture"
         ]}
         whoItsFor="Doctors, clinics, and modern businesses looking for a premium online presence."
-        image={`${import.meta.env.BASE_URL}service_web_dev.png`}
+        image={serviceWebDev}
       />
 
       <ServiceSection 
@@ -79,7 +82,7 @@ const Services = () => {
         ]}
         whoItsFor="Businesses wanting to reduce ad spend and grow organic customer acquisition."
         reverse={true}
-        image={`${import.meta.env.BASE_URL}service_seo.png`}
+        image={serviceSeo}
       />
 
       <ServiceSection 
@@ -93,7 +96,7 @@ const Services = () => {
           "Cross-platform compatibility"
         ]}
         whoItsFor="Companies looking for bespoke tools to manage their growth and operations."
-        image={`${import.meta.env.BASE_URL}service_app_dev.png`}
+        image={serviceAppDev}
       />
 
       {/* CTA */}

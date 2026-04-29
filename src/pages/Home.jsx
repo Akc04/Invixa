@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Monitor, Search, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import heroMain from '../assets/hero_main.png';
 
 const Home = () => {
   const containerVariants = {
@@ -22,7 +23,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="section-padding page-top" style={{ 
         textAlign: 'center', 
-        background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('${import.meta.env.BASE_URL}hero_main.png')`,
+        background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url(${heroMain})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
